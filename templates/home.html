@@ -4,22 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename = 'style/cadastrar.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'style/home.css')}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
 
-    {% if tipo == 'usuario_adm' %}
-    <h1>Olá {{ nome }}, sua matricula é {{ matricula }}</h1>
-        <br> <br>
-         
-    <a href="/lista_pacientes"> Editar Pacientes </a>    
-    
-    <br>
-    <a href="/lista_agendamento"> Editar Consultas </a>
-    <br>
+   <header>
+    <h1> MedDay <span class="logo-icon">⚕️</span></h1>
+    <a href="#" class="logout">Sair</a>
+  </header>
 
-    <a href="/cadastrar"> Cadastrar Novo Paciente </a> <br>
+    <nav class="nav_bar">
+        <div class="back_btn">
+            <a href="/" class="material-symbols-outlined">
+                arrow_back
+            </a>
+        </div>
+        <div class="div_txt">
+            <h1 class="nav_txt">Home</h1>
+        </div>    
+      </nav>
 
+  <main>
+    <section class="cards">
+      <div class="card">
+        <div class="icon"><span class="material-icons">favorite</span></div>
+        <p>Agendar Consulta</p>
+      </div>
+      <div class="card">
+        <div class="icon"><span class="material-icons">calendar_today</span></div>
+        <p>Minha Agenda</p>
+      </div>
+      <div class="card">
+        <div class="icon"><span class="material-icons">badge</span></div>
+        <p>Carteirinha</p>
+      </div>
+    </section>
+
+    <section class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-item">Notícia 1 sobre saúde</div>
+        <div class="carousel-item">Notícia 2 sobre saúde</div>
+        <div class="carousel-item">Notícia 3 sobre saúde</div>
+     </div>
+     <div class="carousel-indicators">
+       <span class="dot active" onclick="moveToSlide(0)"></span>
+       <span class="dot" onclick="moveToSlide(1)"></span>
+       <span class="dot" onclick="moveToSlide(2)"></span>
+     </div>
+    </section>
+  </main>
 
 
 {% else %}
